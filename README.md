@@ -12,24 +12,24 @@ A movie recommendations engine written in Scala with Spark
 ### Clone the Repo
 
 ```shell
-git clone git@github.com:srmds/movie-recommandations.git
+$ git clone git@github.com:srmds/movie-recommandations.git
 ```
 
 ### Build
 
 ```shell
-./gradlew clean build
+$ ./gradlew clean build
 ```
 ### Run
 
 ```shell
-./gradlew run
+$ ./gradlew run
 ```
 
 ### All Together
 
 ```shell
-./gradlew clean run
+$ ./gradlew clean run
 ```
 
 ## Dependencies
