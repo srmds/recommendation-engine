@@ -15,6 +15,38 @@ A movie recommendations engine written in Scala with Spark
 $ git clone git@github.com:srmds/movie-recommandations.git
 ```
 
+### Configure
+
+
+Logging is done via [log4j](https://logging.apache.org/log4j/2.x/)
+
+A template for log4j properties is included in the _src/main/resources/log4j.properties.template_ path.
+
+- Create a custom log4j.properties file by using the template, from root of project run:
+
+
+```shell
+$ cp src/main/resources/log4j.properties.template src/main/resources/log4j.properties 
+```
+
+In order to have less verbose logging and only log our own explicit log lines, change the default logging settings.
+
+- Set the the loggin level from: _INFO_ to _ERROR_:
+
+Change the following line:
+
+```shell
+log4j.rootCategory=INFO, console
+```
+
+to:
+
+```shell
+log4j.rootCategory=ERROR, console
+```
+
+_Note:_ the custom _log4j.properties_ file should not be checked into version control and is therefore added to the _.gitignore_ file.
+
 ### Build
 
 ```shell
