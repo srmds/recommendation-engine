@@ -32,21 +32,36 @@ repositories {
     }
 }
 
+ext {
+    mainClassFile='nl.jongensvantechniek.movierecommendations.application.Main'
+    title='movie-recommandations-engine'
+    commonsioVersions=2.5
+    version='0.0.1'
+    scalaVersion='2.11.8'
+    slf4jVersion='1.7.21'
+    logbackVersion='1.1.7'
+    sparkVersion='2.2.2'
+}
+
 dependencies {
-    compile "org.scala-lang:scala-library:"+scalaVersion
-    compile "org.scala-lang:scala-reflect:"+scalaVersion
-    compile "org.scala-lang:scala-compiler:"+scalaVersion
 
-    compile 'org.apache.spark:spark-mllib_2.11:2.2.2'
-    compile 'org.apache.spark:spark-sql_2.11:2.2.2'
-    compile 'org.apache.spark:spark-streaming-flume-assembly_2.11:2.2.2'
-    compile 'org.apache.spark:spark-graphx_2.11:2.2.2'
-    compile 'org.apache.spark:spark-launcher_2.11:2.2.2'
-    compile 'org.apache.spark:spark-catalyst_2.11:2.2.2'
-    compile 'org.apache.spark:spark-streaming_2.11:2.2.2'
-    compile 'org.apache.spark:spark-core_2.11:2.2.2'
+    //Scala
+    compile "org.scala-lang:scala-library:$scalaVersion"
+    compile "org.scala-lang:scala-reflect:$scalaVersion"
+    compile "org.scala-lang:scala-compiler:$scalaVersion"
 
-    compile group: 'commons-io', name: 'commons-io', version: '2.5'
+    //Spark
+    compile "org.apache.spark:spark-mllib_2.11:$sparkVersion"
+    compile "org.apache.spark:spark-sql_2.11:$sparkVersion"
+    compile "org.apache.spark:spark-streaming-flume-assembly_2.11:$sparkVersion"
+    compile "org.apache.spark:spark-graphx_2.11:$sparkVersion"
+    compile "org.apache.spark:spark-launcher_2.11:$sparkVersion"
+    compile "org.apache.spark:spark-catalyst_2.11:$sparkVersion"
+    compile "org.apache.spark:spark-streaming_2.11:$sparkVersion"
+    compile "org.apache.spark:spark-core_2.11:$sparkVersion"
+
+    //Commons
+    compile "commons-io:commons-io:$commonsioVersions"
 }
 
 task run(type: JavaExec, dependsOn: classes) {

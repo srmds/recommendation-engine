@@ -1,4 +1,4 @@
-package nl.jongensvantechniek.movierecommendations
+package nl.jongensvantechniek.movierecommendations.application
 
 import org.apache.log4j.{Level, LogManager, Logger}
 import org.apache.spark.SparkContext
@@ -16,7 +16,7 @@ trait InitSpark {
 
   val sc: SparkContext = spark.sparkContext
   val sqlContext: SQLContext = spark.sqlContext
-  val log = LogManager.getRootLogger
+  val log: Logger = LogManager.getRootLogger
 
   def reader: DataFrameReader = spark.read
                .option("header",value = true)
