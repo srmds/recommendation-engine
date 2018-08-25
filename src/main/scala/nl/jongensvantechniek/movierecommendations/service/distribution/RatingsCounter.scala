@@ -1,11 +1,14 @@
 package nl.jongensvantechniek.movierecommendations.service.distribution
 
+import org.apache.log4j.{LogManager, Logger}
 import org.apache.spark.SparkContext
 
 /**
   * Count how many of each star rating exists in the MovieLens 100K data seet.
   */
 trait RatingsCounter {
+
+  val log: Logger = LogManager.getRootLogger
 
   /**
     *  Read in the dataset and compute the distribution of ratings, and sort the result by ratings.
