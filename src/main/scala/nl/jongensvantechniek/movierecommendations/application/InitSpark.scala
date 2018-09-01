@@ -27,6 +27,7 @@ trait InitSpark {
                             .option("header", value = true)
                             .option("inferSchema", value = true)
                             .option("mode", "DROPMALFORMED")
+
   private def init(): Unit = {
     sc.setLogLevel("ERROR")
     Logger.getLogger("org").setLevel(Level.ERROR)

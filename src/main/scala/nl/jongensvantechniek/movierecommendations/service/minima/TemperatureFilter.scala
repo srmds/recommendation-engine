@@ -42,7 +42,7 @@ trait TemperatureFilter {
     // Convert to (stationId, temperature)
     val stationTemps = minTemps.map(x => (x._1, x._3.toFloat))
 
-    // Reduce by stationId retaining the minimum temperature found
+    // Reduce (stationId, temperature) by stationId retaining the minimum temperature found
     val minTempsByStation = stationTemps.reduceByKey( (x,y) => min(x,y))
 
     // Collect the results from the RDD (This kicks off computing the DAG and actually executes the job)
