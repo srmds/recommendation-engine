@@ -1,11 +1,11 @@
-package nl.jongensvantechniek.movierecommendations.service.average
+package nl.jongensvantechniek.movierecommendations.exploration.average
 
 import org.apache.spark.SparkContext
 
 /**
   *
   */
-trait AveragesCounter extends Serializable {
+object AveragesCounter extends Serializable {
 
   /**
     *

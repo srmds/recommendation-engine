@@ -1,8 +1,8 @@
-package nl.jongensvantechniek.movierecommendations.service.count.spent
+package nl.jongensvantechniek.movierecommendations.exploration.spent
 
 import org.apache.spark.SparkContext
 
-trait SpendingCounter {
+object SpendingCounter {
 
   /**
     *

@@ -1,11 +1,10 @@
 package nl.jongensvantechniek.movierecommendations.application
 
-import nl.jongensvantechniek.movierecommendations.service.average.AverageComputerService
-import nl.jongensvantechniek.movierecommendations.service.count.spent.SpendingAmountComputerService
-import nl.jongensvantechniek.movierecommendations.service.count.word.WordsCountComputerService
-import nl.jongensvantechniek.movierecommendations.service.distribution.DistributionComputerService
-import nl.jongensvantechniek.movierecommendations.service.minima.{FilterType, TemperatureComputerService}
-
+import nl.jongensvantechniek.movierecommendations.exploration.average.AveragesCounter
+import nl.jongensvantechniek.movierecommendations.exploration.count.WordCounter
+import nl.jongensvantechniek.movierecommendations.exploration.spent.SpendingCounter
+import nl.jongensvantechniek.movierecommendations.service.movie.MovieRecommendationService
+import nl.jongensvantechniek.movierecommendations.exploration.minima.{FilterType, TemperatureFilter}
 import scala.annotation.switch
 import scala.io.StdIn.readLine
 
@@ -15,17 +14,18 @@ import scala.io.StdIn.readLine
 object Main extends InitSpark {
 
   private val version = spark.version
+
   private val movieLensDataSetPath = "datasets/movielens/ml-100k/u.data"
   private val fakeFriendsDataSetPath = "datasets/friends/fakefriends.csv"
   private val temperaturesDataSetPath = "datasets/weather/temperatures.csv"
   private val bookDataSetPath = "datasets/book/book.txt"
   private val customerOrderDataset = "datasets/spending/customer_orders.csv"
 
-  private val distributionService = DistributionComputerService
-  private val averageService = AverageComputerService
-  private val temperaturesService = TemperatureComputerService
-  private val wordsCountService = WordsCountComputerService
-  private val spendingAmountService = SpendingAmountComputerService
+  private val movieRecommendationService = MovieRecommendationService
+  private val averagesCounter = AveragesCounter
+  private val temperatureFilter = TemperatureFilter
+  private val wordCounter = WordCounter
+  private val spendingCounter = SpendingCounter
 
   /**
     *
@@ -56,7 +56,7 @@ object Main extends InitSpark {
       case "1" => {
         log.debug("---------------------------------------<[ Distribution ]>------------------------------------------")
         log.debug(s"Get the distribution of ratings for dataset: $movieLensDataSetPath")
-        val distributionOfRatings = distributionService.computeDistributionOfRatings(sc, movieLensDataSetPath)
+        val distributionOfRatings = movieRecommendationService.getSortedRatingsCount(sc, movieLensDataSetPath)
         log.debug("|rating, count of rating|")
         distributionOfRatings.foreach(rating => log.debug(rating))
       }
@@ -64,7 +64,7 @@ object Main extends InitSpark {
       case "2" => {
         log.debug("---------------------------------------<[ Average ]>-----------------------------------------------")
         log.debug(s"Get the averages of friends by ages for dataset: $fakeFriendsDataSetPath")
-        val avergesOfFriendsByAge = averageService.computeAverageOfFriendsByAge(sc, fakeFriendsDataSetPath)
+        val avergesOfFriendsByAge = averagesCounter.getSortedAveragesByAge(sc, fakeFriendsDataSetPath)
         log.debug("|age, average of friends|")
         avergesOfFriendsByAge.sorted.foreach(average => log.debug(average))
       }
@@ -72,7 +72,7 @@ object Main extends InitSpark {
       case "3" => {
         log.debug("---------------------------------------<[ Filtering ]>---------------------------------------------")
         log.debug(s"Get MINIMUM of temperatures for dataset: $temperaturesDataSetPath")
-        val minimaTemperatures = temperaturesService.computeFilteredTemperatures(
+        val minimaTemperatures = temperatureFilter.getTemperaturesForStations(
           sc,
           temperaturesDataSetPath,
           FilterType.MIN_TEMPERATURE
@@ -85,7 +85,7 @@ object Main extends InitSpark {
         log.debug("-------------------------")
 
         log.debug(s"Get MAXIMUM of temperatures for dataset: $temperaturesDataSetPath")
-        val maximaTemperatures = temperaturesService.computeFilteredTemperatures(
+        val maximaTemperatures = temperatureFilter.getTemperaturesForStations(
           sc,
           temperaturesDataSetPath,
           FilterType.MAX_TEMPERATURE
@@ -99,7 +99,7 @@ object Main extends InitSpark {
       case "4" => {
         log.debug("---------------------------------------<[ Words Count ]>-------------------------------------------------")
         log.debug(s"Get the count of words for dataset: $bookDataSetPath")
-        val wordCounts = wordsCountService.computeWordCount(sc, bookDataSetPath)
+        val wordCounts = wordCounter.getCountOfEachWord(sc, bookDataSetPath)
         log.debug("|count, word|")
         wordCounts.foreach(result => log.debug(result))
       }
@@ -107,7 +107,7 @@ object Main extends InitSpark {
       case "5" => {
         log.debug("---------------------------------------<[ Spending Amount Count ]>-------------------------------------------------")
         log.debug(s"Get spending amount per customer for dataset: $customerOrderDataset")
-        val spendings = spendingAmountService.computSpendingCount(sc, customerOrderDataset)
+        val spendings = spendingCounter.getSpendingAmountPerCustomer(sc, customerOrderDataset)
         log.debug("|amount, customerId|")
         spendings.foreach(result => log.debug(result))
       }

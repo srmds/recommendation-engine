@@ -1,11 +1,11 @@
-package nl.jongensvantechniek.movierecommendations.service.count.word
+package nl.jongensvantechniek.movierecommendations.exploration.count
 
 import org.apache.spark.SparkContext
 
 /**
   *
   */
-trait WordCounter {
+object WordCounter {
 
   /**
     *

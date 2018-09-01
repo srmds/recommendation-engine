@@ -1,4 +1,4 @@
-package nl.jongensvantechniek.movierecommendations.service.minima
+package nl.jongensvantechniek.movierecommendations.exploration.minima
 
 import org.apache.log4j.{LogManager, Logger}
 import org.apache.spark.SparkContext
@@ -7,7 +7,7 @@ import scala.math.min
 /**
   *
   */
-trait TemperatureFilter {
+object TemperatureFilter {
 
   val log: Logger = LogManager.getRootLogger
 

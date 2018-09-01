@@ -1,4 +1,4 @@
-package nl.jongensvantechniek.movierecommendations.service.distribution
+package nl.jongensvantechniek.movierecommendations.service.movie
 
 import org.apache.log4j.{LogManager, Logger}
 import org.apache.spark.SparkContext
@@ -6,7 +6,7 @@ import org.apache.spark.SparkContext
 /**
   * Count how many of each star rating exists in the MovieLens 100K data seet.
   */
-trait RatingsCounter {
+trait MovieRatingsCounter {
 
   val log: Logger = LogManager.getRootLogger
 

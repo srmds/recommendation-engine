@@ -1,6 +1,6 @@
-package nl.jongensvantechniek.movierecommendations.service.minima
+package nl.jongensvantechniek.movierecommendations.exploration.minima
 
-import nl.jongensvantechniek.movierecommendations.service.minima
+import nl.jongensvantechniek.movierecommendations.exploration.minima
 
 object FilterType extends Enumeration {
   type FilterType = Value
