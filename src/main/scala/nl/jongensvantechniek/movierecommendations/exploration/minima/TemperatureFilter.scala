@@ -1,7 +1,7 @@
 package nl.jongensvantechniek.movierecommendations.exploration.minima
 
-import org.apache.log4j.{LogManager, Logger}
-import org.apache.spark.SparkContext
+import nl.jongensvantechniek.movierecommendations.application.SparkManager
+
 import scala.math.min
 
 /**
@@ -9,19 +9,19 @@ import scala.math.min
   */
 object TemperatureFilter {
 
-  val log: Logger = LogManager.getRootLogger
+  private val sparkManager = SparkManager
 
   /**
     *
-    * @param sparkContext
     * @param dataSourcePath
+    * @param filterType
     * @return
     */
-  def getTemperaturesForStations(sparkContext: SparkContext,
-                                 dataSourcePath: String,
+  def getTemperaturesForStations(dataSourcePath: String,
                                  filterType: FilterType.FilterType): Seq[(String, Float)] = {
+    sparkManager.init("Min/Max temperatures")
     // Load up each line of the ratings data into an RDD
-    val lines = sparkContext.textFile(dataSourcePath)
+    val lines = sparkManager.sc.textFile(dataSourcePath)
 
     // Split by commas
     // Extract the stationId, entryType and temperature as Fahrenheit
@@ -46,6 +46,9 @@ object TemperatureFilter {
     val minTempsByStation = stationTemps.reduceByKey( (x,y) => min(x,y))
 
     // Collect the results from the RDD (This kicks off computing the DAG and actually executes the job)
-    minTempsByStation.collect()
+    val result = minTempsByStation.collect()
+    sparkManager.close()
+
+    result
   }
 }

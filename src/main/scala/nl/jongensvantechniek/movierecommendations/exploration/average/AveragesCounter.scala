@@ -1,22 +1,24 @@
 package nl.jongensvantechniek.movierecommendations.exploration.average
 
-import org.apache.spark.SparkContext
+import nl.jongensvantechniek.movierecommendations.application.SparkManager
 
 /**
   *
   */
 object AveragesCounter extends Serializable {
 
+  val sparkManager = SparkManager
+  sparkManager.appName = this.getClass.getCanonicalName
+
   /**
     *
-    * @param sparkContext
     * @param dataSourcePath
     * @return
     */
-  def getSortedAveragesByAge(sparkContext: SparkContext, dataSourcePath: String): Array[(Int, Int)] = {
-
+  def getSortedAveragesByAge(dataSourcePath: String): Array[(Int, Int)] = {
+    sparkManager.init("Average of friends per age")
     // Load each line of the source data into an RDD
-    val lines = sparkContext.textFile(dataSourcePath)
+    val lines = sparkManager.sc.textFile(dataSourcePath)
 
     // Split by commas
     // Extract the age and numFriends fields, and convert to integers
@@ -37,7 +39,10 @@ object AveragesCounter extends Serializable {
     val averagesByAge = totalsByAge.mapValues(x => x._1 / x._2)
 
     // Collect the results from the RDD (This kicks off computing the DAG and actually executes the job)
-    averagesByAge.collect()
+    val result = averagesByAge.collect()
+    sparkManager.close()
+
+    result
   }
 
 }

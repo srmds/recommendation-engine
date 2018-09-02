@@ -1,24 +1,23 @@
 package nl.jongensvantechniek.movierecommendations.exploration.count
 
-import org.apache.spark.SparkContext
+import nl.jongensvantechniek.movierecommendations.application.SparkManager
 
 /**
   *
   */
 object WordCounter {
 
+  private val sparkManager = SparkManager
   /**
     *
-    * @param sparkContext
     * @param dataSourcePath
     * @param splitWordsOnRegex
     * @return
     */
-  def getCountOfEachWord(sparkContext: SparkContext,
-                         dataSourcePath: String, splitWordsOnRegex: String = "\\W+"): Seq[(Int, String)] =  {
-
+  def getCountOfEachWord(dataSourcePath: String, splitWordsOnRegex: String = "\\W+"): Seq[(Int, String)] =  {
+    sparkManager.init("Count of words occurrences")
     // Load up each line of the ratings data into an RDD
-    val lines = sparkContext.textFile(dataSourcePath)
+    val lines = sparkManager.sc.textFile(dataSourcePath)
 
     // Split into words separated by a space character
     val words = lines.flatMap(x => x.split(splitWordsOnRegex))
@@ -38,7 +37,10 @@ object WordCounter {
 
     // Return an RDD sorted by occurrence count, instead of the words alphanumerically: (2, foobar) instead of (foobar, 2)
     // Collect the results from the RDD (This kicks off computing the DAG and actually executes the job)
-    wordsCount.map(x => (x._2, x._1)).sortByKey().collect()
+    val result = wordsCount.map(x => (x._2, x._1)).sortByKey().collect()
+    sparkManager.close()
+
+    result
   }
 
 }

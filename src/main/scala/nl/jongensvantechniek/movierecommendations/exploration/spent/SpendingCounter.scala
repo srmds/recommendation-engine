@@ -1,20 +1,23 @@
 package nl.jongensvantechniek.movierecommendations.exploration.spent
 
-import org.apache.spark.SparkContext
+import nl.jongensvantechniek.movierecommendations.application.SparkManager
 
+/**
+  *
+  */
 object SpendingCounter {
+
+  private val sparkManager = SparkManager
 
   /**
     *
-    * @param sparkContext
     * @param dataSourcePath
     * @return
     */
-  def getSpendingAmountPerCustomer(sparkContext: SparkContext,
-                         dataSourcePath: String): Seq[(Float, Int)] =  {
-
+  def getSpendingAmountPerCustomer(dataSourcePath: String): Seq[(Float, Int)] =  {
+    sparkManager.init("Spending Amount per customer")
     // Load up each line of the ratings data into an RDD
-    val lines = sparkContext.textFile(dataSourcePath)
+    val lines = sparkManager.sc.textFile(dataSourcePath)
 
     // Split by commas
     // Extract the customerId, amount spend
@@ -36,6 +39,9 @@ object SpendingCounter {
 
     // Return an RDD sorted by amounts spent count, instead of the customer Id : (99.99, 123) instead of (123, 99.99)
     // Collect the results from the RDD (This kicks off computing the DAG and actually executes the job)
-    customersSpendAmount.map(x => (x._2, x._1)).sortByKey().collect()
+    val result = customersSpendAmount.map(x => (x._2, x._1)).sortByKey().collect()
+    sparkManager.close()
+
+    result
   }
 }
