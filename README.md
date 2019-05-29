@@ -5,10 +5,10 @@ A movie recommendations engine written in Scala with Spark
 
 | Table of contents                                                                   |
 |-------------------------------------------------------------------------------------|
-| [Scala basics I - Datatypes & String formatting](1.-Datatypes-&-String-formatting)  |
-| [Scala basics II - Flow of Control](2.-Flow-of-Control)                             |
-| [Scala basics III - Functions](3.-Functions)                                        |
-| [Scala basics IV - Datastructures](4.-Datastructures)              
+| [Scala basics I - Datatypes & String formatting](https://github.com/srmds/recommendation-engine-spark/wiki/1.-Datatypes-&-String-formattingg)  |
+| [Scala basics II - Flow of Control](https://github.com/srmds/recommendation-engine-spark/wiki/2.-Flow-of-Control)                             |
+| [Scala basics III - Functions](https://github.com/srmds/recommendation-engine-spark/wiki/3.-Functions)                                        |
+| [Scala basics IV - Datastructures](https://github.com/srmds/recommendation-engine-spark/wiki/4.-Datastructures)              
 
 ## Prerequisites
 - [Java](https://java.com/en/download/)
