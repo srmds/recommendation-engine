@@ -105,6 +105,23 @@ Elapsed time: `298 ms`
 
 ### Get the averages of friends by ages
 
+| age    | average of friends | 
+|------- | --------------|
+|18|343|
+|19|213|
+|26|242|
+|27|228|
+|28|209|
+|34|245|
+|35|211|
+|36|246|
+|37|249|
+|38|193|
+|39|169|
+|67|214|
+|68|269|
+|69|235|
+
 See [here](https://github.com/srmds/recommendation-engine-spark/wiki/Analysis-results#get-the-averages-of-friends-by-ages) for full analysis
 
 Source file (500 rows): [datasets/friends/fakefriends.csv](https://github.com/srmds/recommendation-engine-spark/blob/development/datasets/friends/fakefriends.csv)
@@ -113,7 +130,7 @@ Elapsed time: `173 ms`
 
 ## Weather stations
 
-## Get _minimum_ of temperatures
+### Get _minimum_ of temperatures
 
 | stationId | minimum Temperature (Fahrenheit)| 
 |-----------| --------------------------------|
