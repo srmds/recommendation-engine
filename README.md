@@ -89,7 +89,7 @@ $ ./gradlew clean run
 | 4                 | 34174         |  
 | 5                 | 21201         |
 
-See [here](wiki/Analysis-results#get-all-movie-ratings) for full analysis
+See [here](https://github.com/srmds/recommendation-engine-spark/wiki/Analysis-results#get-all-movie-ratings) for full analysis
 
 Source file (100.000 rows): _datasets/movielens/ml-100k/u.data_
 
