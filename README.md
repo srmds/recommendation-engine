@@ -89,11 +89,15 @@ $ ./gradlew clean run
 | 4                 | 34174         |  
 | 5                 | 21201         |
 
+See [here](wiki/Analysis-results#get-all-movie-ratings) for full analysis
+
 Source file (100.000 rows): _datasets/movielens/ml-100k/u.data_
 
 Elapsed time: `298 ms` 
 
 ### Get the averages of friends by ages
+
+See [here](https://github.com/srmds/recommendation-engine-spark/wiki/Analysis-results#get-the-averages-of-friends-by-ages) for full analysis
 
 Source file (500 rows): _datasets/friends/fakefriends.csv_
 
@@ -114,6 +118,8 @@ Elapsed time: `173 ms`
 |-----------| --------------------------------|
 |EZE00100082| 16.52                           |
 |ITE00100554| 18.5                            | 
+
+See [here](https://github.com/srmds/recommendation-engine-spark/wiki/Analysis-results#weather-stations) for full analysis
 
 Source file (1825 rows): _datasets/weather/temperatures.csv_
 
@@ -139,7 +145,7 @@ Elapsed time: `506 ms`
 |1828|to|
 |1878|you|
 
-See [here](Results.md#markdown-header-word-occurrences) for full analysis
+See [here](https://github.com/srmds/recommendation-engine-spark/wiki/Analysis-results#word-occurrences) for full analysis
 
 Source file (~46.249 words): _datasets/book/book.txt_
 
@@ -168,7 +174,7 @@ Elapsed time: _267 ms_
 
 ## Popularity of movies by ratings
 
-|count (stars) | movieId|
+|count | movieId|
 |--------------|--------|
 |1|1494|
 |1|1414|
@@ -186,7 +192,7 @@ Elapsed time: _267 ms_
 |509|258|
 |583|50|
 
-See [here](Results.md#markdown-header-word-occurrences) for full analysis
+See [here](https://github.com/srmds/recommendation-engine-spark/wiki/Analysis-results#popularity-of-movies-by-ratings) for full analysis
 
 Source file (100.000 rows): _datasets/movielens/ml-100k/u.data_
 
@@ -194,13 +200,13 @@ Elapsed time: _219 ms_
 
 ## Popularity of superhero in social network
 
-### _Most_ populair superhero
+### _Most_ popular superhero
 
 |friendsCount | (id,name)|
 |-------------|----------|
 | 1933 |(859,CAPTAIN AMERICA)|
 
-### _Least_ populair superhero
+### _Least_ popular superhero
 
 |friendsCount | (id,name)|
 |-------------|----------|
@@ -220,12 +226,12 @@ Elapsed time: _219 ms_
 |1014|HERCULES [GREEK GOD]|2449|
 
 
-See [here](Results.md#markdown-header-word-occurrences) for full analysis
+See [here](https://github.com/srmds/recommendation-engine-spark/wiki/Analysis-results#popularity-of-superhero-in-social-network) for full analysis
 
 Source files:
  
- - (100.000 rows): _datasets/social/Marvel-graph.txt_
- - (100.0000 rows): _datasets/social/Marvel-names.txt_
+ - (6.589 rows): _datasets/social/Marvel-graph.txt_
+ - (19.428 rows): _datasets/social/Marvel-names.txt_
 
 Elapsed time: _1515 ms_
 
