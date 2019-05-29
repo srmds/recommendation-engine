@@ -14,7 +14,7 @@ Have a look at the [wiki](https://github.com/srmds/recommendation-engine-spark/w
 ### Clone the Repo
 
 ```shell
-$ git clone git@github.com:srmds/movie-recommandations.git
+$ git clone https://github.com/srmds/recommendation-engine-spark
 ```
 
 ### Configure
