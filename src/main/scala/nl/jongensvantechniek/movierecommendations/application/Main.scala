@@ -159,7 +159,7 @@ object Main {
         println("---------------------------------------<[ Popularity of superheroes ]>---------------")
         val topSuperHeroes = socialNetworkService.getPopulairHeroes(superHeroesGraphDataset, superHeroesNamesDataset)
         println("|friendsCount, (name, id)|")
-        topSuperHeroes foreach {case (key, value) => println (key + "," + value._2 + "," + value._1 )}
+        topSuperHeroes foreach {case (key, value) => println ("(" + key + "," + value._2 + "," + value._1 + ")" )}
 
         println("\nMost populair superhero:")
         println("|friendsCount, (id,name)|")

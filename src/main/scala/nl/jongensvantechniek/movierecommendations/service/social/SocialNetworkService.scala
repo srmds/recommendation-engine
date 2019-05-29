@@ -7,8 +7,9 @@ import org.apache.spark.rdd.RDD
   *
   */
 object SocialNetworkService extends SuperHeroNamesLoader
-  with OccurenceCounter
-  with GraphLoader {
+                            with OccurenceCounter
+                            with GraphLoader
+                            with DegreesOfSeperation {
 
   private val sparkManager = SparkManager
 

@@ -69,10 +69,165 @@ $ ./gradlew clean run
 - Spark - 2.1.0
 
 ## Resources
+
 - [Spark Docs - Root Page](http://spark.apache.org/docs/latest/)
 - [Spark Programming Guide](http://spark.apache.org/docs/latest/programming-guide.html)
 - [Spark Latest API docs](http://spark.apache.org/docs/latest/api/)
 - [Scala API Docs](http://www.scala-lang.org/api/2.12.1/scala/)
+
+
+## Benchmark of recommendations
+
+
+### Get all movie ratings
+
+| rating (stars)    | count (votes) | 
+|-------------------| --------------|
+| 1                 | 6110          | 
+| 2                 | 11370         |  
+| 3                 | 27145         |  
+| 4                 | 34174         |  
+| 5                 | 21201         |
+
+Source file (100.000 rows): _datasets/movielens/ml-100k/u.data_
+
+Elapsed time: `298 ms` 
+
+### Get the averages of friends by ages
+
+Source file (500 rows): _datasets/friends/fakefriends.csv_
+
+Elapsed time: `173 ms` 
+
+## Weather stations
+
+## Get _minimum_ of temperatures
+
+| stationId | minimum Temperature (Fahrenheit)| 
+|-----------| --------------------------------|
+|EZE00100082 | 7.700001                       | 
+|ITE00100554 | 5.3600006                      |
+
+
+### Get _maximum_ of temperatures 
+| stationId | minimum Temperature (Fahrenheit)| 
+|-----------| --------------------------------|
+|EZE00100082| 16.52                           |
+|ITE00100554| 18.5                            | 
+
+Source file (1825 rows): _datasets/weather/temperatures.csv_
+
+Elapsed time: `506 ms` 
+
+
+## Word occurrences
+
+| count (occurence) | word |
+|-------------------|------|
+|2|refer|
+|3|compared|
+|4|forces|
+|560|is|
+|616|in|
+|649|it|
+|747|that|
+|934|and|
+|970|of|
+|1191|a|
+|1292|the|
+|1420|your|
+|1828|to|
+|1878|you|
+
+See [here](Results.md#markdown-header-word-occurrences) for full analysis
+
+Source file (~46.249 words): _datasets/book/book.txt_
+
+Elapsed time: _377 ms_
+
+## Spending amount per customer
+
+|amount (spent) | customerId|
+|-------|-----------|
+|3309.3804|45|
+|4316.3|47|
+|4327.7305|77|
+|4367.62|13|
+|4836.86|20|
+|4851.4795|89|
+|4876.8394|95|
+|4898.461|38|
+|5206.3994|87|
+|5245.0605|52|
+
+See [here](Results.md#markdown-header-word-occurrences) for full analysis
+
+Source file (10.000 rows): _datasets/spending/customer_orders.csv_
+
+Elapsed time: _267 ms_
+
+## Popularity of movies by ratings
+
+|count (stars) | movieId|
+|--------------|--------|
+|1|1494|
+|1|1414|
+|2|1585|
+|2|907|
+|2|1547|
+|3|1361|
+|3|1391|
+|4|1223|
+|4|1423|
+|5|1489|
+|5|1333|
+|507|181|
+|508|100|
+|509|258|
+|583|50|
+
+See [here](Results.md#markdown-header-word-occurrences) for full analysis
+
+Source file (100.000 rows): _datasets/movielens/ml-100k/u.data_
+
+Elapsed time: _219 ms_
+
+## Popularity of superhero in social network
+
+### _Most_ populair superhero
+
+|friendsCount | (id,name)|
+|-------------|----------|
+| 1933 |(859,CAPTAIN AMERICA)|
+
+### _Least_ populair superhero
+
+|friendsCount | (id,name)|
+|-------------|----------|
+|0|(467,BERSERKER II)|
+
+|friendsCount| (name, id)|
+|------------|-----------|
+|106|RATTLER|4545|
+|238|SUPREME INTELLIGENCE|5555|
+|121|LEWIS| SHIRLEY WASHI|3173|
+|84|UNICORN/MYLOS MASARY|5955|
+|966|ICEMAN/ROBERT BOBBY |2603|
+|147|EEL II/EDWARD LAVELL|1689|
+|109|BLACK KNIGHT IV/PROF|521|
+|668|SILVER SURFER/NORRIN|5121|
+|198|STANKOWICZ| FABIAN|5375|
+|1014|HERCULES [GREEK GOD]|2449|
+
+
+See [here](Results.md#markdown-header-word-occurrences) for full analysis
+
+Source files:
+ 
+ - (100.000 rows): _datasets/social/Marvel-graph.txt_
+ - (100.0000 rows): _datasets/social/Marvel-names.txt_
+
+Elapsed time: _1515 ms_
 
 ## License
 
