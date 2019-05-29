@@ -91,7 +91,7 @@ $ ./gradlew clean run
 
 See [here](https://github.com/srmds/recommendation-engine-spark/wiki/Analysis-results#get-all-movie-ratings) for full analysis
 
-Source file (100.000 rows): _datasets/movielens/ml-100k/u.data_
+Source file (100.000 rows): [datasets/movielens/ml-100k/u.data](https://github.com/srmds/recommendation-engine-spark/blob/development/datasets/movielens/ml-100k/u.data)
 
 Elapsed time: `298 ms` 
 
@@ -99,7 +99,7 @@ Elapsed time: `298 ms`
 
 See [here](https://github.com/srmds/recommendation-engine-spark/wiki/Analysis-results#get-the-averages-of-friends-by-ages) for full analysis
 
-Source file (500 rows): _datasets/friends/fakefriends.csv_
+Source file (500 rows): [datasets/friends/fakefriends.csv](https://github.com/srmds/recommendation-engine-spark/blob/development/datasets/friends/fakefriends.csv)
 
 Elapsed time: `173 ms` 
 
@@ -121,7 +121,7 @@ Elapsed time: `173 ms`
 
 See [here](https://github.com/srmds/recommendation-engine-spark/wiki/Analysis-results#weather-stations) for full analysis
 
-Source file (1825 rows): _datasets/weather/temperatures.csv_
+Source file (1825 rows): [datasets/weather/temperatures.csv](https://github.com/srmds/recommendation-engine-spark/blob/development/datasets/weather/temperatures.csv)
 
 Elapsed time: `506 ms` 
 
@@ -147,7 +147,7 @@ Elapsed time: `506 ms`
 
 See [here](https://github.com/srmds/recommendation-engine-spark/wiki/Analysis-results#word-occurrences) for full analysis
 
-Source file (~46.249 words): _datasets/book/book.txt_
+Source file (~46.249 words): [datasets/book/book.txt](https://github.com/srmds/recommendation-engine-spark/blob/development/datasets/book/book.txt)
 
 Elapsed time: _377 ms_
 
@@ -168,7 +168,7 @@ Elapsed time: _377 ms_
 
 See [here](Results.md#markdown-header-word-occurrences) for full analysis
 
-Source file (10.000 rows): _datasets/spending/customer_orders.csv_
+Source file (10.000 rows): [datasets/spending/customer_orders.csv](https://github.com/srmds/recommendation-engine-spark/blob/development/datasets/spending/customer_orders.csv)
 
 Elapsed time: _267 ms_
 
@@ -194,7 +194,7 @@ Elapsed time: _267 ms_
 
 See [here](https://github.com/srmds/recommendation-engine-spark/wiki/Analysis-results#popularity-of-movies-by-ratings) for full analysis
 
-Source file (100.000 rows): _datasets/movielens/ml-100k/u.data_
+Source file (100.000 rows): [datasets/movielens/ml-100k/u.data](https://github.com/srmds/recommendation-engine-spark/blob/development/datasets/movielens/ml-100k/u.data)
 
 Elapsed time: _219 ms_
 
@@ -230,8 +230,8 @@ See [here](https://github.com/srmds/recommendation-engine-spark/wiki/Analysis-re
 
 Source files:
  
- - (6.589 rows): _datasets/social/Marvel-graph.txt_
- - (19.428 rows): _datasets/social/Marvel-names.txt_
+ - (6.589 rows): [datasets/social/Marvel-graph.txt](https://github.com/srmds/recommendation-engine-spark/blob/development/datasets/social/Marvel-graph.txt)
+ - (19.428 rows): [datasets/social/Marvel-names.txt](https://github.com/srmds/recommendation-engine-spark/blob/development/datasets/social/Marvel-names.txt)
 
 Elapsed time: _1515 ms_
 
