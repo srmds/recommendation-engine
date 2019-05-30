@@ -126,14 +126,14 @@ Elapsed time: `173 ms`
 
 ### Get _minimum_ of temperatures
 
-| stationId | minimum Temperature (Fahrenheit)| 
+| stationId | Temperature (Fahrenheit)| 
 |-----------| --------------------------------|
 |EZE00100082 | 7.700001                       | 
 |ITE00100554 | 5.3600006                      |
 
 
 ### Get _maximum_ of temperatures 
-| stationId | minimum Temperature (Fahrenheit)| 
+| stationId | Temperature (Fahrenheit)| 
 |-----------| --------------------------------|
 |EZE00100082| 16.52                           |
 |ITE00100554| 18.5                            | 
