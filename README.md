@@ -1,6 +1,6 @@
 # Recommandations engine
 
-A movie recommendations engine written in Scala with Spark
+A recommendations engine written in Scala with Spark
 
 Have a look at the [wiki](https://github.com/srmds/recommendation-engine-spark/wiki) for Scala and Spark fundamentals
 
