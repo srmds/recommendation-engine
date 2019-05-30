@@ -168,7 +168,7 @@ See [here](https://github.com/srmds/recommendation-engine-spark/wiki/Analysis-re
 
 Source file (~46.249 words): [datasets/book/book.txt](https://github.com/srmds/recommendation-engine-spark/blob/development/datasets/book/book.txt)
 
-Elapsed time: _377 ms_
+Elapsed time: `377 ms`
 
 ## Spending amount per customer
 
@@ -189,7 +189,7 @@ See [here](Results.md#markdown-header-word-occurrences) for full analysis
 
 Source file (10.000 rows): [datasets/spending/customer_orders.csv](https://github.com/srmds/recommendation-engine-spark/blob/development/datasets/spending/customer_orders.csv)
 
-Elapsed time: _267 ms_
+Elapsed time: `267 ms`
 
 ## Popularity of movies by ratings
 
@@ -215,7 +215,7 @@ See [here](https://github.com/srmds/recommendation-engine-spark/wiki/Analysis-re
 
 Source file (100.000 rows): [datasets/movielens/ml-100k/u.data](https://github.com/srmds/recommendation-engine-spark/blob/development/datasets/movielens/ml-100k/u.data)
 
-Elapsed time: _219 ms_
+Elapsed time: `219 ms`
 
 ## Popularity of superhero in social network
 
@@ -252,7 +252,7 @@ Source files:
  - (6.589 rows): [datasets/social/Marvel-graph.txt](https://github.com/srmds/recommendation-engine-spark/blob/development/datasets/social/Marvel-graph.txt)
  - (19.428 rows): [datasets/social/Marvel-names.txt](https://github.com/srmds/recommendation-engine-spark/blob/development/datasets/social/Marvel-names.txt)
 
-Elapsed time: _1515 ms_
+Elapsed time: `1515 ms`
 
 ## License
 
