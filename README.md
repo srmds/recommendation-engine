@@ -1,4 +1,4 @@
-# Movie-recommandations engine
+# Recommandations engine
 
 A movie recommendations engine written in Scala with Spark
 
