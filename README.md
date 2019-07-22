@@ -4,7 +4,7 @@ A recommendations engine written in Scala with Spark
 
 Have a look at the [wiki](https://github.com/srmds/recommendation-engine-spark/wiki) for Scala and Spark fundamentals
 
-_Note: This project is still Work In Progress (WIP_
+_Note: This project is still Work In Progress (WIP)_
 
 ## Prerequisites
 - [Java](https://java.com/en/download/)
