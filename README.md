@@ -6,6 +6,8 @@ Have a look at the [wiki](https://github.com/srmds/recommendation-engine-spark/w
 
 _Note: This project is still Work In Progress (WIP)_
 
+This codebase my work output as part of following [Frank Kane's](https://sundog-education.com) Course: [Apache Spark 2 with Scala - Hands On with Big Data](https://www.udemy.com/apache-spark-with-scala-hands-on-with-big-data)
+
 ## Prerequisites
 - [Java](https://java.com/en/download/)
 - [Gradle](https://gradle.org/)
